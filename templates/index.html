@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AgroGuard - Pest Detector</title>
+  <style>
+    body {font-family:Arial; text-align:center; background:#f0f8ea; padding:40px}
+    .box {max-width:600px; margin:auto; background:white; padding:30px; border-radius:15px}
+    input, button {padding:12px; margin:8px; font-size:16px}
+    button {background:#4CAF50; color:white; border:none; border-radius:8px}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>AgroGuard</h1>
+    <form method="POST" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" required><br>
+      <input type="text" name="city" placeholder="Enter city" required><br>
+      <button>Analyze</button>
+    </form>
+  </div>
+</body>
+</html>

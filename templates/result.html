@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AgroGuard Result</title>
+  <style>
+    body {font-family:Arial; text-align:center; background:#f0f8ea; padding:20px}
+    .box {max-width:700px; margin:auto; background:white; padding:25px; border-radius:15px}
+    .pest {font-size:28px; color:#d32f2f; font-weight:bold}
+    .count {font-size:20px; color:#e65100}
+    .advice {background:#fff8e1; padding:15px; border-radius:8px; margin:15px 0}
+    img {max-width:100%; border:2px solid #ddd; border-radius:10px; margin:15px 0}
+    a {color:#4caf50; text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>AgroGuard Diagnosis</h1>
+    <img src="/static/uploads/{{filename}}" alt="Detected Pests">
+    
+    <p class="pest">Pest: {{pest}}</p>
+    <p class="count">Count: {{count}}</p>
+    {% if confidence %}<p>Confidence: {{confidence}}%</p>{% endif %}
+
+    <h3>Weather in {{city}}</h3>
+    <p>{{weather.temp}}°C | {{weather.humidity}}% humidity | {{weather.desc}}</p>
+
+    <div class="advice">
+      <h3>Recommended Action</h3>
+      <p><strong>{{advice}}</strong></p>
+    </div>
+
+    <a href="/">Scan Another Image</a>
+  </div>
+</body>
+</html>
