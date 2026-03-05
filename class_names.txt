@@ -1,0 +1,15 @@
+ants
+beetle
+caterpillar
+earwig
+grasshopper
+moth
+slug
+snail
+spider
+stinkbug
+termite
+thrips
+weevil
+whitefly
+wasp
