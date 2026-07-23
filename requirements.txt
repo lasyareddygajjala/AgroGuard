@@ -5,3 +5,4 @@ Pillow
 opencv-python-headless
 tensorflow
 scikit-learn
+tensorflow==2.10.1
