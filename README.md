@@ -63,3 +63,36 @@ AgroGuard/
 ├── Procfile               # Deployment configuration
 └── README.md              # Project documentation
 ```
+---
+
+## ⚙️ Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/lasyareddygajjala/AgroGuard.git
+```
+
+### 2. Navigate to the project folder
+
+```bash
+cd AgroGuard
+```
+
+### 3. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the application
+
+```bash
+python app.py
+```
+
+### 5. Open in your browser
+
+```text
+http://127.0.0.1:5000
+```
