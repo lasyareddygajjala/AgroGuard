@@ -111,3 +111,12 @@ http://127.0.0.1:5000
    - Weather information
    - Pest control advice
    - Annotated image with prediction
+---
+
+## 🚀 Future Improvements
+
+- Improve model accuracy by training with more crop disease images.
+- Support additional crops and diseases.
+- Deploy the application online for public access.
+- Add multilingual support for farmers.
+- Store prediction history in a database.
