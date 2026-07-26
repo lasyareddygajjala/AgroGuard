@@ -12,3 +12,26 @@ The project aims to support farmers and agricultural researchers by enabling ear
 - 📊 Displays the predicted crop disease.
 - 💻 Easy-to-use Flask web application.
 - 📱 Clean and responsive user interface.
+---
+
+## 🛠️ Tech Stack
+
+### Programming Language
+- Python
+
+### Backend Framework
+- Flask
+
+### Deep Learning
+- TensorFlow
+- Keras
+
+### Image Processing
+- OpenCV
+- Pillow
+- NumPy
+
+### Frontend
+- HTML
+- CSS
+- JavaScript
