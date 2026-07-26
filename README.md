@@ -96,3 +96,18 @@ python app.py
 ```text
 http://127.0.0.1:5000
 ```
+---
+
+## ▶️ Usage
+
+1. Launch the Flask application.
+2. Open the application in your browser.
+3. Upload a crop leaf image.
+4. Enter the city name.
+5. Click **Predict**.
+6. View:
+   - Predicted pest
+   - Confidence score
+   - Weather information
+   - Pest control advice
+   - Annotated image with prediction
