@@ -120,3 +120,15 @@ http://127.0.0.1:5000
 - Deploy the application online for public access.
 - Add multilingual support for farmers.
 - Store prediction history in a database.
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
+---
+
+## 👨‍💻 Author
+
+**Lasya Reddy Gajjala**
+
+GitHub: https://github.com/lasyareddygajjala
