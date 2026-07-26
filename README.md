@@ -46,7 +46,6 @@ The project aims to support farmers and agricultural researchers by enabling ear
 5. The predicted crop disease is generated.
 6. The prediction result is displayed to the user.
 ---
-
 ## 📂 Project Structure
 
 ```text
@@ -56,8 +55,9 @@ AgroGuard/
 ├── static/                # CSS, JavaScript, images, uploads
 ├── templates/             # HTML templates
 ├── app.py                 # Main Flask application
+├── weather.py             # Weather API integration
 ├── train_model.py         # Model training script
-├── class_names.txt        # Disease class labels
+├── class_names.txt        # Pest class labels
 ├── requirements.txt       # Project dependencies
 ├── runtime.txt            # Python runtime version
 ├── Procfile               # Deployment configuration
