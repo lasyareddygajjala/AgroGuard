@@ -45,3 +45,21 @@ The project aims to support farmers and agricultural researchers by enabling ear
 4. The trained deep learning model analyzes the image.
 5. The predicted crop disease is generated.
 6. The prediction result is displayed to the user.
+---
+
+## 📂 Project Structure
+
+```text
+AgroGuard/
+│
+├── model/                 # Trained deep learning model
+├── static/                # CSS, JavaScript, images, uploads
+├── templates/             # HTML templates
+├── app.py                 # Main Flask application
+├── train_model.py         # Model training script
+├── class_names.txt        # Disease class labels
+├── requirements.txt       # Project dependencies
+├── runtime.txt            # Python runtime version
+├── Procfile               # Deployment configuration
+└── README.md              # Project documentation
+```
