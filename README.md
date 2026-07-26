@@ -35,3 +35,13 @@ The project aims to support farmers and agricultural researchers by enabling ear
 - HTML
 - CSS
 - JavaScript
+---
+
+## 🔄 Project Workflow
+
+1. User uploads a crop leaf image.
+2. Flask receives the uploaded image.
+3. The image is preprocessed and resized.
+4. The trained deep learning model analyzes the image.
+5. The predicted crop disease is generated.
+6. The prediction result is displayed to the user.
