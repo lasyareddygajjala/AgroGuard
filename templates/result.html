@@ -1,35 +1,395 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>AgroGuard Result</title>
-  <style>
-    body {font-family:Arial; text-align:center; background:#f0f8ea; padding:20px}
-    .box {max-width:700px; margin:auto; background:white; padding:25px; border-radius:15px}
-    .pest {font-size:28px; color:#d32f2f; font-weight:bold}
-    .count {font-size:20px; color:#e65100}
-    .advice {background:#fff8e1; padding:15px; border-radius:8px; margin:15px 0}
-    img {max-width:100%; border:2px solid #ddd; border-radius:10px; margin:15px 0}
-    a {color:#4caf50; text-decoration:none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroGuard | Diagnosis Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <div class="box">
-    <h1>AgroGuard Diagnosis</h1>
-    <img src="/static/uploads/{{filename}}" alt="Detected Pests">
-    
-    <p class="pest">Pest: {{pest}}</p>
-    <p class="count">Count: {{count}}</p>
-    {% if confidence %}<p>Confidence: {{confidence}}%</p>{% endif %}
 
-    <h3>Weather in {{city}}</h3>
-    <p>{{weather.temp}}°C | {{weather.humidity}}% humidity | {{weather.desc}}</p>
+<div class="page">
 
-    <div class="advice">
-      <h3>Recommended Action</h3>
-      <p><strong>{{advice}}</strong></p>
-    </div>
+    <!-- ================= NAVBAR ================= -->
 
-    <a href="/">Scan Another Image</a>
-  </div>
+    <header class="header">
+
+        <div class="brand">
+
+            <span class="brand-icon">🌱</span>
+
+            <div>
+                <h1>AgroGuard</h1>
+                <p>AI-Powered Crop Protection</p>
+            </div>
+
+        </div>
+
+        <div class="result-status">
+            ✓ Analysis Complete
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="result-container">
+
+
+        <!-- PAGE INTRO -->
+
+        <section class="result-intro">
+
+            <div>
+
+                <p class="small-title">
+                    AI ANALYSIS
+                </p>
+
+                <h2>
+                    Crop Pest Diagnosis
+                </h2>
+
+                <p class="result-description">
+                    Computer vision analysis of your uploaded crop image
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= MAIN RESULT ================= -->
+
+        <section class="result-main-grid">
+
+
+            <!-- IMAGE -->
+
+            <div class="result-image-card">
+
+                <div class="result-card-heading">
+
+                    <span>📷</span>
+
+                    <div>
+                        <h3>Analyzed Image</h3>
+                        <p>AI-powered visual inspection</p>
+                    </div>
+
+                </div>
+
+
+                <div class="result-image-wrapper">
+
+                    <img
+                        src="{{ url_for('static', filename='uploads/' + filename) }}"
+                        alt="Analyzed crop image">
+
+                </div>
+
+
+                <div class="image-result-tag">
+                    ✓ Image analyzed successfully
+                </div>
+
+            </div>
+
+
+
+            <!-- DETECTION -->
+
+            <div class="diagnosis-card">
+
+                <p class="small-title">
+                    DETECTED PEST
+                </p>
+
+
+                <div class="pest-display">
+
+                    <div class="pest-icon">
+                        🐛
+                    </div>
+
+                    <div>
+
+                        <span class="detected-label">
+                            Detected
+                        </span>
+
+                        <h3>
+                            {{ pest }}
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIDENCE -->
+
+                <div class="confidence-section">
+
+                    <div class="confidence-header">
+
+                        <span>
+                            AI Confidence
+                        </span>
+
+                        <strong>
+                            {{ confidence }}%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="confidence-bar">
+
+                        <div
+                            class="confidence-fill"
+                            data-confidence="{{ confidence }}">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DETECTED COUNT -->
+
+                <div class="detection-stat">
+
+                    <div class="stat-icon">
+                        🔎
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Detected Count
+                        </span>
+
+                        <strong>
+                            {{ count }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ai-note">
+                    🤖 Result generated using AgroGuard
+                    computer vision.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= INFORMATION ================= -->
+
+        <section class="information-grid">
+
+
+            <!-- WEATHER -->
+
+            <div class="info-card weather-card">
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        🌤️
+                    </div>
+
+                    <div>
+
+                        <p class="small-title">
+                            WEATHER CONDITIONS
+                        </p>
+
+                        <h3>
+                            {{ city }}
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="weather-details">
+
+
+                    <div class="weather-item">
+
+                        <span>🌡️</span>
+
+                        <div>
+
+                            <small>
+                                Temperature
+                            </small>
+
+                            <strong>
+                                {{ weather.temp }}°C
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weather-item">
+
+                        <span>💧</span>
+
+                        <div>
+
+                            <small>
+                                Humidity
+                            </small>
+
+                            <strong>
+                                {{ weather.humidity }}%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="weather-item">
+
+                        <span>☁️</span>
+
+                        <div>
+
+                            <small>
+                                Conditions
+                            </small>
+
+                            <strong>
+                                {{ weather.desc }}
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SMART ADVICE -->
+
+            <div class="info-card advice-card">
+
+                <div class="info-card-header">
+
+                    <div class="info-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <p class="small-title">
+                            RECOMMENDED ACTION
+                        </p>
+
+                        <h3>
+                            Smart Advice
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="advice-content">
+
+                    <p>
+                        {{ advice }}
+                    </p>
+
+                </div>
+
+
+                <div class="advice-note">
+
+                    📌 Monitor the crop regularly and consult
+                    a local agricultural expert when necessary.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ACTION ================= -->
+
+        <section class="result-actions">
+
+            <a href="/" class="analyze-btn">
+
+                🔍 Analyze Another Image
+
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            AgroGuard • AI-Based Agricultural Assistance
+        </p>
+
+    </footer>
+
+</div>
+
+
+
+<!-- ================= CONFIDENCE SCRIPT ================= -->
+
+<script>
+
+    const confidenceBar =
+        document.querySelector(".confidence-fill");
+
+    if (confidenceBar) {
+
+        const confidence =
+            parseFloat(
+                confidenceBar.dataset.confidence
+            ) || 0;
+
+        confidenceBar.style.width =
+            Math.min(confidence, 100) + "%";
+    }
+
+</script>
+
 </body>
 </html>

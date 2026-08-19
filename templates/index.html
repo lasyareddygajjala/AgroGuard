@@ -1,22 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>AgroGuard - Pest Detector</title>
-  <style>
-    body {font-family:Arial; text-align:center; background:#f0f8ea; padding:40px}
-    .box {max-width:600px; margin:auto; background:white; padding:30px; border-radius:15px}
-    input, button {padding:12px; margin:8px; font-size:16px}
-    button {background:#4CAF50; color:white; border:none; border-radius:8px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgroGuard | AI Crop Protection</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
 </head>
+
 <body>
-  <div class="box">
-    <h1>AgroGuard</h1>
-    <form method="POST" enctype="multipart/form-data">
-      <input type="file" name="image" accept="image/*" required><br>
-      <input type="text" name="city" placeholder="Enter city" required><br>
-      <button>Analyze</button>
-    </form>
-  </div>
+
+<div class="page">
+
+    <!-- NAVBAR -->
+    <header class="header">
+
+        <div class="brand">
+            <span class="brand-icon">🌱</span>
+
+            <div>
+                <h1>AgroGuard</h1>
+                <p>AI-Powered Crop Protection</p>
+            </div>
+        </div>
+
+        <div class="header-badge">
+            🌾 SMART AGRICULTURE
+        </div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="home-container">
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="hero-icon">
+                🌿
+            </div>
+
+            <p class="small-title">
+                AI-POWERED AGRICULTURE
+            </p>
+
+            <h2>
+                Protect Your Crops<br>
+                With Intelligent AI
+            </h2>
+
+            <p class="hero-text">
+                Upload a crop image and let AgroGuard identify
+                potential pests using AI-powered computer vision,
+                weather intelligence and smart agricultural guidance.
+            </p>
+
+        </section>
+
+
+        <!-- ANALYSIS CARD -->
+        <section class="upload-card">
+
+            <div class="upload-heading">
+                <span>🔬</span>
+
+                <div>
+                    <p class="section-label">AI ANALYSIS</p>
+                    <h3>Analyze Your Crop</h3>
+                </div>
+            </div>
+
+
+            <form method="POST"
+                  enctype="multipart/form-data">
+
+                <!-- IMAGE UPLOAD -->
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <h3>Upload Crop Image</h3>
+
+                    <p>
+                        Select a clear image of the affected
+                        crop or visible pest.
+                    </p>
+
+                    <label class="file-button">
+                        📁 Choose Image
+
+                        <input type="file"
+                               name="image"
+                               accept="image/*"
+                               required>
+                    </label>
+
+                    <p class="file-hint">
+                        Supported formats: JPG, JPEG, PNG
+                    </p>
+
+                </div>
+
+
+                <!-- LOCATION -->
+                <div class="city-section">
+
+                    <label for="city">
+                        📍 Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="city"
+                        name="city"
+                        placeholder="Enter your city (e.g. Hyderabad)"
+                        required
+                    >
+
+                    <p class="input-hint">
+                        Local weather conditions help provide
+                        better agricultural recommendations.
+                    </p>
+
+                </div>
+
+
+                <!-- ANALYZE -->
+                <button type="submit"
+                        class="analyze-btn">
+
+                    🔍
+                    <span>Analyze Crop</span>
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section class="features">
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <div>
+                    <strong>AI Detection</strong>
+                    <p>
+                        Computer vision powered pest identification
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    🌤️
+                </div>
+
+                <div>
+                    <strong>Weather Analysis</strong>
+                    <p>
+                        Local weather-based agricultural insights
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="feature">
+
+                <div class="feature-icon">
+                    💡
+                </div>
+
+                <div>
+                    <strong>Smart Advice</strong>
+                    <p>
+                        Actionable crop protection guidance
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TRUST MESSAGE -->
+        <div class="trust-message">
+            🌱 AI-assisted analysis • Fast results • Simple workflow
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            AgroGuard · AI-Based Agricultural Assistance
+        </p>
+    </footer>
+
+</div>
+
 </body>
 </html>
